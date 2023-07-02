@@ -1643,7 +1643,15 @@ const Home = () => {
         setFleetData(fleetdata)
       }
     }
-  }, [jetclass, manufacture, model, countrys, daterange])
+  }, [
+    jetclass,
+    manufacture,
+    model,
+    countrys,
+    daterange,
+    flightdetails,
+    flightsdetails
+  ])
 
   React.useEffect(() => {
     if (flightdetails?.length !== 0) {
