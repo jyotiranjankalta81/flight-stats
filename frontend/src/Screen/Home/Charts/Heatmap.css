@@ -1,0 +1,30 @@
+/* heatmap-calendar.css */
+
+.heatmap-calendar {
+  display: grid;
+  grid-template-columns: repeat(50, 1fr);
+  grid-gap: 4px;
+  border: 2px solid green;
+  border-radius: 10px;
+  width: 100%;
+  padding: 1rem;
+}
+
+.calendar-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: bold;
+  padding: 9px;
+  border-radius: 4px;
+  position: relative;
+  cursor: pointer;
+  /* background: hsl(130, 80%, 30%); */
+}
+
+.empty {
+  background-color: lightgray;
+}
+
+/* Add additional styles as needed */
