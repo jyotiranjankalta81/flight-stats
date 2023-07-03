@@ -2298,13 +2298,13 @@ const Home = () => {
                 <p className='table_heading'>Departures</p>
               </div>
               <div className='table_6Sectionss'>
-                <p className='table_heading'>Change VS Previous Period</p>
+                <p className='table_heading'>Change Vs Previous Period</p>
               </div>
               <div className='table_6Sectionss'>
                 <p className='table_heading'>Change Vs 2022</p>
               </div>
               <div className='table_6Sectionss'>
-                <p className='table_heading'>Change Vs 2021</p>
+                <p className='table_heading'>Change Vs 2021 </p>
               </div>
               <div className='table_6Sectionss'>
                 <p className='table_heading'>Change Vs 2020</p>
@@ -2330,18 +2330,16 @@ const Home = () => {
                           <p className='table_heading'>{item?.count}</p>
                         </div>
                         <div className='table_6Sections'>
-                          <p className='table_heading'>
-                            Change VS Previous Period
-                          </p>
+                          <p className='table_heading'>{/* 00 */}0</p>
                         </div>
                         <div className='table_6Sections'>
-                          <p className='table_heading'>Change Vs 2022</p>
+                          <p className='table_heading'>{/* 0 */}0</p>
                         </div>
                         <div className='table_6Sections'>
-                          <p className='table_heading'>Change Vs 2021</p>
+                          <p className='table_heading'>0</p>
                         </div>
                         <div className='table_6Sections'>
-                          <p className='table_heading'>Change Vs 2020</p>
+                          <p className='table_heading'>0</p>
                         </div>
                       </div>
                       <hr />
@@ -2364,18 +2362,16 @@ const Home = () => {
                           <p className='table_heading'>{item?.count}</p>
                         </div>
                         <div className='table_6Sections'>
-                          <p className='table_heading'>
-                            Change VS Previous Period
-                          </p>
+                          <p className='table_heading'>0</p>
                         </div>
                         <div className='table_6Sections'>
-                          <p className='table_heading'>Change Vs 2022</p>
+                          <p className='table_heading'>0</p>
                         </div>
                         <div className='table_6Sections'>
-                          <p className='table_heading'>Change Vs 2021</p>
+                          <p className='table_heading'>0</p>
                         </div>
                         <div className='table_6Sections'>
-                          <p className='table_heading'>Change Vs 2020</p>
+                          <p className='table_heading'>0</p>
                         </div>
                       </div>
                       <hr />
@@ -2398,18 +2394,16 @@ const Home = () => {
                           <p className='table_heading'>{item?.count}</p>
                         </div>
                         <div className='table_6Sections'>
-                          <p className='table_heading'>
-                            Change VS Previous Period
-                          </p>
+                          <p className='table_heading'>0</p>
                         </div>
                         <div className='table_6Sections'>
-                          <p className='table_heading'>Change Vs 2022</p>
+                          <p className='table_heading'>0</p>
                         </div>
                         <div className='table_6Sections'>
-                          <p className='table_heading'>Change Vs 2021</p>
+                          <p className='table_heading'>0</p>
                         </div>
                         <div className='table_6Sections'>
-                          <p className='table_heading'>Change Vs 2020</p>
+                          <p className='table_heading'>0</p>
                         </div>
                       </div>
                       <hr />
@@ -2439,18 +2433,16 @@ const Home = () => {
                           <p className='table_heading'>{item?.count}</p>
                         </div>
                         <div className='table_6Sections'>
-                          <p className='table_heading'>
-                            Change VS Previous Period
-                          </p>
+                          <p className='table_heading'>0</p>
                         </div>
                         <div className='table_6Sections'>
-                          <p className='table_heading'>Change Vs 2022</p>
+                          <p className='table_heading'>0</p>
                         </div>
                         <div className='table_6Sections'>
-                          <p className='table_heading'>Change Vs 2021</p>
+                          <p className='table_heading'>0</p>
                         </div>
                         <div className='table_6Sections'>
-                          <p className='table_heading'>Change Vs 2020</p>
+                          <p className='table_heading'>0</p>
                         </div>
                       </div>
                       <hr />
@@ -2473,18 +2465,16 @@ const Home = () => {
                           <p className='table_heading'>{item?.count}</p>
                         </div>
                         <div className='table_6Sections'>
-                          <p className='table_heading'>
-                            Change VS Previous Period
-                          </p>
+                          <p className='table_heading'>0</p>
                         </div>
                         <div className='table_6Sections'>
-                          <p className='table_heading'>Change Vs 2022</p>
+                          <p className='table_heading'>0</p>
                         </div>
                         <div className='table_6Sections'>
-                          <p className='table_heading'>Change Vs 2021</p>
+                          <p className='table_heading'>0</p>
                         </div>
                         <div className='table_6Sections'>
-                          <p className='table_heading'>Change Vs 2020</p>
+                          <p className='table_heading'>0</p>
                         </div>
                       </div>
                       <hr />
@@ -2507,18 +2497,16 @@ const Home = () => {
                           <p className='table_heading'>{item?.count}</p>
                         </div>
                         <div className='table_6Sections'>
-                          <p className='table_heading'>
-                            Change VS Previous Period
-                          </p>
+                          <p className='table_heading'>0</p>
                         </div>
                         <div className='table_6Sections'>
-                          <p className='table_heading'>Change Vs 2022</p>
+                          <p className='table_heading'>0</p>
                         </div>
                         <div className='table_6Sections'>
-                          <p className='table_heading'>Change Vs 2021</p>
+                          <p className='table_heading'>0</p>
                         </div>
                         <div className='table_6Sections'>
-                          <p className='table_heading'>Change Vs 2020</p>
+                          <p className='table_heading'>0</p>
                         </div>
                       </div>
                       <hr />
