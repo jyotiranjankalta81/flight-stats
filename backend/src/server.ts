@@ -19,15 +19,7 @@ const expressFileUpload = require("express-fileupload");
 const webLink = "https://airlabs.co/api/v9/flights?"; // Replace with the actual URL of the third-party website
 const webLinks = "https://airlabs.co/api/v9/fleets?";
 
-// dead=====>
-// const apiKey = "e2a9b86e-e1cc-4746-8a2d-cdd1630bdf6e";
-// const apiKey = "6bbc1be5-88d0-4f84-96d9-0faf03e41c09";
-// const apiKey = "e5141de9-d4bb-4204-b3a4-8a16d888d51c";
-const apiKey = "65ae8e2e-95bc-4fb3-8d41-9bee5d899fe4";
-
-// working====>
-// const apiKey = "01db09ab-2c79-4d15-9687-92c916226422";
-// const apiKey = "2730ebfa-6113-4bd2-83b0-97cb0240cf52";
+const apiKey = config.apiKey;
 
 export const app: Express = express();
 if (config.env !== "test") {
