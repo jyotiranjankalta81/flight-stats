@@ -1,7 +1,6 @@
-import { ExtractJwt, Strategy } from 'passport-jwt'
-import { UserService } from '../service/auth.service';
-import { config } from './config';
-
+import { ExtractJwt, Strategy } from "passport-jwt";
+// import { UserService } from '../service/auth.service';
+import { config } from "./config";
 
 const jwtOptions = {
   secretOrKey: config.jwt.secret,
@@ -10,7 +9,8 @@ const jwtOptions = {
 
 const jwtVerify = async (payload: any, done: any) => {
   try {
-    const user = await UserService.GetuserbyID(payload.sub);
+    // const user = await UserService.GetuserbyID(payload.sub);
+    const user = "kalta";
     if (!user) {
       return done(null, false);
     }
@@ -20,4 +20,3 @@ const jwtVerify = async (payload: any, done: any) => {
   }
 };
 export const jwtStrategy = new Strategy(jwtOptions, jwtVerify);
-

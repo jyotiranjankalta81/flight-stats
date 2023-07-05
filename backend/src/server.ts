@@ -22,7 +22,8 @@ const webLinks = "https://airlabs.co/api/v9/fleets?";
 // dead=====>
 // const apiKey = "e2a9b86e-e1cc-4746-8a2d-cdd1630bdf6e";
 // const apiKey = "6bbc1be5-88d0-4f84-96d9-0faf03e41c09";
-const apiKey = "e5141de9-d4bb-4204-b3a4-8a16d888d51c";
+// const apiKey = "e5141de9-d4bb-4204-b3a4-8a16d888d51c";
+const apiKey = "65ae8e2e-95bc-4fb3-8d41-9bee5d899fe4";
 
 // working====>
 // const apiKey = "01db09ab-2c79-4d15-9687-92c916226422";
@@ -466,416 +467,76 @@ async function fetchData() {
   }
 }
 
-async function fetchfleetData(count: any) {
+async function fetchfleetData() {
   // console.log("fetchfleet started ");
-  // var count = 10000;
-  console.log("count", count);
-  // return false;
+  var count = 10000;
+  return false;
 
   // while (count < 20000) {
-  try {
-    // Make the GET request to the third-party website
-    return false;
 
-    const response = await axios.get(webLinks, {
-      params: {
-        api_key: apiKey,
-        limit: "1000",
-        offset: `${count}`, // Include your API key as a query parameter
-        // aircraft_icao: [
-        //   "PRM1",
-        //   // aircraft_icao:
-        //   // "PRM1",
-        //   // aircraft_icao:
-        //   "CL30",
-        //   // aircraft_icao:
-        //   "CL35",
-        //   // aircraft_icao:
-        //   "CL60",
-        //   // aircraft_icao:
-        //   // "CL60",
-        //   // // aircraft_icao:
-        //   // "CL60",
-        //   // // aircraft_icao:
-        //   // "CL60",
-        //   // // aircraft_icao:
-        //   // "CL60",
-        //   // // aircraft_icao:
-        //   // "CL60",
-        //   // // aircraft_icao:
-        //   // "CL60",
-        //   // // aircraft_icao:
-        //   // "CL60",
-        //   // aircraft_icao:
-        //   "CRJ2",
-        //   // aircraft_icao:
-        //   "GL5T",
-        //   // aircraft_icao:
-        //   "GLEX",
-        //   // aircraft_icao:
-        //   "GL7T",
-        //   // aircraft_icao:
-        //   // "GLEX",
-        //   // aircraft_icao:
-        //   "GLEX",
-        //   // aircraft_icao:
-        //   "LJ31",
-        //   // aircraft_icao:
-        //   // "LJ31",
-        //   // // aircraft_icao:
-        //   // "LJ31",
-        //   // aircraft_icao:
-        //   "LJ35",
-        //   // aircraft_icao:
-        //   "LJ35",
-        //   // aircraft_icao:
-        //   "LJ40",
-        //   // aircraft_icao:
-        //   // "LJ40",
-        //   // aircraft_icao:
-        //   "LJ45",
-        //   // aircraft_icao:
-        //   // "LJ45",
-        //   // aircraft_icao:
-        //   "LJ55",
-        //   // aircraft_icao:
-        //   // "LJ55",
-        //   // aircraft_icao:
-        //   "LJ60",
-        //   // aircraft_icao:
-        //   // "LJ60",
-        //   // aircraft_icao:
-        //   "LJ70",
-        //   // aircraft_icao:
-        //   "LJ75",
-        //   // aircraft_icao:
-        //   // "LJ75",
-        //   // aircraft_icao:
-        //   "C55B",
-        //   // aircraft_icao:
-        //   "C525",
-        //   // aircraft_icao:
-        //   // "C525",
-        //   // aircraft_icao:
-        //   "C25A",
-        //   // aircraft_icao:
-        //   // "C25A",
-        //   // aircraft_icao:
-        //   "C25B",
-        //   // aircraft_icao:
-        //   // "C25B",
-        //   // aircraft_icao:
-        //   "C25C",
-        //   // aircraft_icao:
-        //   // "C560",
-        //   // aircraft_icao:
-        //   "C560",
-        //   // aircraft_icao:
-        //   "C56X",
-        //   // aircraft_icao:
-        //   "C500",
-        //   // aircraft_icao:
-        //   "C550",
-        //   // aircraft_icao:
-        //   // "C650",
-        //   // aircraft_icao:
-        //   "C68A",
-        //   // aircraft_icao:
-        //   "C700",
-        //   // aircraft_icao:
-        //   "C25M",
-        //   // aircraft_icao:
-        //   "C510",
-        //   // aircraft_icao:
-        //   "C550",
-        //   // aircraft_icao:
-        //   "C680",
-        //   // aircraft_icao:
-        //   // "C680",
-        //   // aircraft_icao:
-        //   "C560",
-        //   // aircraft_icao:
-        //   // "C560",
-        //   // aircraft_icao:
-        //   "C650",
-        //   // aircraft_icao:
-        //   // "C650",
-        //   // aircraft_icao:
-        //   "C750",
-        //   // aircraft_icao:
-        //   // "C750",
-        //   // aircraft_icao:
-        //   // "C56X",
-        //   // aircraft_icao:
-        //   "C56X",
-        //   // aircraft_icao:
-        //   "SF50",
-        //   // aircraft_icao:
-        //   "FA10",
-        //   // aircraft_icao:
-        //   // "FA10",
-        //   // aircraft_icao:
-        //   "FA20",
-        //   // aircraft_icao:
-        //   "F2TH",
-        //   // aircraft_icao:
-        //   // "F2TH",
-        //   // aircraft_icao:
-        //   "F2TH",
-        //   // aircraft_icao:
-        //   // "F2TH",
-        //   // aircraft_icao:
-        //   // "F2TH",
-        //   // aircraft_icao:
-        //   // "F2TH",
-        //   // aircraft_icao:
-        //   "F2TH",
-        //   // aircraft_icao:
-        //   "FA20",
-        //   // aircraft_icao:
-        //   "FA50",
-        //   // aircraft_icao:
-        //   // "FA50",
-        //   // // aircraft_icao:
-        //   // "FA50",
-        //   // aircraft_icao:
-        //   "FA6X",
-        //   // aircraft_icao:
-        //   "FA7X",
-        //   // aircraft_icao:
-        //   "FA8X",
-        //   // aircraft_icao:
-        //   "F900",
-        //   // aircraft_icao:
-        //   // "F900",
-        //   // // aircraft_icao:
-        //   // "F900",
-        //   // // aircraft_icao:
-        //   // "F900",
-        //   // // aircraft_icao:
-        //   // "F900",
-        //   // // aircraft_icao:
-        //   // "F900",
-        //   // // aircraft_icao:
-        //   // "F900",
-        //   // aircraft_icao:
-        //   "EA50",
-        //   // aircraft_icao:
-        //   // "EA50",
-        //   // aircraft_icao:
-        //   "E545",
-        //   // aircraft_icao:
-        //   "E550",
-        //   // aircraft_icao:
-        //   "E35L",
-        //   // aircraft_icao:
-        //   // "E35L",
-        //   // // aircraft_icao:
-        //   // "E35L",
-        //   // aircraft_icao:
-        //   "E190",
-        //   // aircraft_icao:
-        //   // "E190",
-        //   // aircraft_icao:
-        //   "E50P",
-        //   // aircraft_icao:
-        //   // "E50P",
-        //   // // aircraft_icao:
-        //   // "E50P",
-        //   // aircraft_icao:
-        //   "E55P",
-        //   // aircraft_icao:
-        //   // "E55P",
-        //   // aircraft_icao:
-        //   "E545",
-        //   // aircraft_icao:
-        //   "E550",
-        //   // aircraft_icao:
-        //   "ASTR",
-        //   // aircraft_icao:
-        //   "G150",
-        //   // aircraft_icao:
-        //   "GALX",
-        //   // aircraft_icao:
-        //   "G280",
-        //   // aircraft_icao:
-        //   // "GLF4",
-        //   // // aircraft_icao:
-        //   // "GLF4",
-        //   // // aircraft_icao:
-        //   // "GLF4",
-        //   // // aircraft_icao:
-        //   // "GLF4",
-        //   // aircraft_icao:
-        //   "GLF5",
-        //   // aircraft_icao:
-        //   // "GLF5",
-        //   // aircraft_icao:
-        //   "GA6C",
-        //   // aircraft_icao:
-        //   "GLF6",
-        //   // aircraft_icao:
-        //   // "GLF6",
-        //   // aircraft_icao:
-        //   "GA7C",
-        //   // aircraft_icao:
-        //   "GLF2",
-        //   // aircraft_icao:
-        //   "GLF3",
-        //   // aircraft_icao:
-        //   "GLF4",
-        //   // aircraft_icao:
-        //   // "GLF4",
-        //   // aircraft_icao:
-        //   "GLF5",
-        //   // aircraft_icao:
-        //   "H25C",
-        //   // aircraft_icao:
-        //   "HA4T",
-        //   // aircraft_icao:
-        //   "BE40",
-        //   // aircraft_icao:
-        //   "H25B",
-        //   // aircraft_icao:
-        //   // "H25B",
-        //   // // aircraft_icao:
-        //   // "H25B",
-        //   // // aircraft_icao:
-        //   // "H25B",
-        //   // // aircraft_icao:
-        //   // "H25B",
-        //   // // aircraft_icao:
-        //   // "H25B",
-        //   // // aircraft_icao:
-        //   // "H25B",
-        //   // aircraft_icao:
-        //   "HDJT",
-        //   // aircraft_icao:
-        //   "WW24",
-        //   // aircraft_icao:
-        //   // "WW24",
-        //   // aircraft_icao:
-        //   "MU30",
-        //   // aircraft_icao:
-        //   "BE4W",
-        //   // aircraft_icao:
-        //   // "BE4W",
-        //   // aircraft_icao:
-        //   "PC24",
-        //   // aircraft_icao:
-        //   "GA4C",
-        //   // aircraft_icao:
-        //   // "GA8C",
-        //   // aircraft_icao:
-        //   "CL60",
-        //   // aircraft_icao:
-        //   "GL5T",
-        //   // aircraft_icao:
-        //   "GLEX",
-        //   // aircraft_icao:
-        //   "HDJT",
-        // ],
-      },
-    });
+  for (let index = 0; count < 300000; index++) {
+    // const element = array[index];
+    try {
+      // Make the GET request to the third-party website
+      return false;
 
-    // Extract the relevant data from the response
-    // console.log("response", response.length);
-    const data = response.data.response;
-    // console.log("dataslice", data?.slice(0, 1));
-    console.log("fleet data", data?.length);
-
-    // return false;
-
-    // var aircraftdata=[];
-
-    for (let index = 0; index < data?.length; index++) {
-      const element = data[index].airline_iata;
-      // console.log("elements", data[index]);
-
-      if (data?.length == index) {
-        // count = count + 10000;
-        console.log("count increses");
-        return count;
-      }
-      const hexchecker = await FlightDetailsInstance.findAll({
-        where: {
-          AIRLINE_IATA: element,
+      const response = await axios.get(webLinks, {
+        params: {
+          api_key: apiKey,
+          limit: "1000",
+          offset: `${count}`, // Include your API key as a query parameter
         },
       });
+      const data = response.data.response;
+      console.log("fleet data", data?.length);
 
-      console.log("checker", hexchecker?.length);
-      // return false;
-      for (let index = 0; index < hexchecker?.length; index++) {
-        const element = hexchecker?.[index]?.FLIGHT_ID;
-        if (element) {
-          const result = await FlightDetailsInstance.update(
-            {
-              IS_FLEET: "Yes",
-            },
-            {
-              where: {
-                FLIGHT_ID: element,
+      for (let index = 0; index < data?.length; index++) {
+        const element = data[index].airline_iata;
+        // console.log("elements", data[index]);
+        const hexchecker = await FlightDetailsInstance.findAll({
+          where: {
+            AIRLINE_IATA: element,
+          },
+        });
+
+        console.log("checker", hexchecker?.length);
+        // return false;
+        for (let index = 0; index < hexchecker?.length; index++) {
+          const element = hexchecker?.[index]?.FLIGHT_ID;
+          if (element) {
+            const result = await FlightDetailsInstance.update(
+              {
+                IS_FLEET: "Yes",
               },
-            }
-          );
-          // return result;
+              {
+                where: {
+                  FLIGHT_ID: element,
+                },
+              }
+            );
+            // return result;
+          }
         }
       }
-      // if (hexchecker) {
-      //   return false;
-      // }
-      // if (hexchecker) {
-      //   const result = await FlightDetailsInstance.update(
-      //     {
-      //       IS_FLEET: "Yes",
-      //     },
-      //     {
-      //       where: {
-      //         HEX: element,
-      //       },
-      //     }
-      //   );
-      //   return result;
-      // }
+    } catch (error) {
+      console.error(
+        "An error occurred while collecting or storing the data:",
+        error
+      );
     }
 
-    // Make the POST request to your personal database API to store the data
-    // await axios.post("/", data);
-
-    console.log("Data successfully collected and stored.");
-    console.log("count", count);
-  } catch (error) {
-    console.error(
-      "An error occurred while collecting or storing the data:",
-      error
-    );
+    count = count + 10000;
+    return count;
   }
 }
 
 // Run the fetchData function initially
 fetchData();
-var count = 10000;
-fetchfleetData(count);
+fetchfleetData();
 
 // Schedule the fetchData function to run every 5 minutes
 setInterval(fetchData, 360 * 60 * 1000);
-setInterval(() => {
-  while (count < 200000) {
-    const result = fetchfleetData(count);
-    console.log("results", result);
-    // if(result){
-    count = count + 10000;
-    // }
-  }
-}, 360 * 60 * 1000);
 setInterval(fetchfleetData, 360 * 60 * 1000); // 5 minutes = 5 * 60 * 1000 milliseconds
-
-// var minutes = 0.2,
-//   the_interval = minutes * 60 * 1000;
-// setInterval(function () {
-//   console.log("i'm doing 5 minutes check");
-//   // app.get
-// }, the_interval);
 
 //upload image
 app.use("*/images", express.static("public/uploads"));
