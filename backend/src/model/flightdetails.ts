@@ -1,6 +1,7 @@
 import { DataTypes, Model } from "sequelize";
 import { sequelizeDB } from "../db/db-connection";
 import { flightdetailsinterface } from "../interface/flightdetails.interface";
+import { AircraftClassInstance } from "./aircraftclass";
 
 export class FlightDetailsInstance extends Model<flightdetailsinterface> {
   [x: string]: any;
@@ -246,6 +247,14 @@ FlightDetailsInstance.init(
       type: DataTypes.STRING,
       allowNull: true,
     },
+    AIRCRAFTS_CLASS: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    CLASS_ID: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
     // bodys.arr_country,
   },
   {
@@ -253,3 +262,16 @@ FlightDetailsInstance.init(
     tableName: "tbl_flight",
   }
 );
+
+// AircraftClassInstance.belongsTo(FlightDetailsInstance, {
+//   foreignKey: {
+//     name: "CLASS_ID",
+//     allowNull: true,
+//   },
+// });
+// FlightDetailsInstance.hasOne(AircraftClassInstance, {
+//   foreignKey: {
+//     name: "CLASS_ID",
+//     allowNull: true,
+//   },
+// });

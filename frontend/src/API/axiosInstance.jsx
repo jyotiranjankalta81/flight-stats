@@ -1,13 +1,14 @@
 import axios from 'axios'
 
-export const backendUrl = 'http://13.50.84.227:8000/api/'
+// export const backendUrl = 'http://13.50.84.227:8000/api/'
 // export const imageBacked = 'http://localhost:8000/'
 
 // export const backendUrl = 'https://backlom.techjainsupport.co.in/api/'
 // export const imageBacked = 'https://backlom.techjainsupport.co.in/'
 
 // export const backendUrl = 'http://16.16.189.156:8000/api/'
-export const imageBacked = 'http://13.50.84.227:8000/'
+export const backendUrl = 'http://localhost:8000/api/'
+// export const imageBacked = 'http://13.50.84.227:8000/'
 
 // export const backendUrl = 'https://airlabs.co/api/v9/'
 

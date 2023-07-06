@@ -367,9 +367,9 @@ async function fetchData() {
     // console.log("dataslice", data?.slice(0, 1));
     console.log("data", data?.length);
 
-    return false;
+    // return false;
 
-    for (let index = 0; index < data?.length; index++) {
+    for (let index = 0; index < 2; index++) {
       const element = data[index]?.flight_icao;
       // console.log("elements", data[index]);
       if (element) {
@@ -466,11 +466,11 @@ async function fetchfleetData() {
 
   // while (count < 20000) {
 
-  for (let index = 0; count < 300000; index++) {
+  for (let index = 0; count < 500000; index++) {
     // const element = array[index];
     try {
       // Make the GET request to the third-party website
-      return false;
+      // return false;
 
       const response = await axios.get(webLinks, {
         params: {
@@ -510,15 +510,16 @@ async function fetchfleetData() {
           }
         }
       }
+      count = count + 10000;
+      // return count;
+      console.log("count", count);
+      console.log("succesfully fleet data stored");
     } catch (error) {
       console.error(
         "An error occurred while collecting or storing the data:",
         error
       );
     }
-
-    count = count + 10000;
-    return count;
   }
 }
 

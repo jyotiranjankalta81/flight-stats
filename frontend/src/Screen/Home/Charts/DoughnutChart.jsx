@@ -315,6 +315,8 @@ const DoughnutChart = () => {
     dispatch(allFlightDetails())
   }, [])
 
+  console.log('repeting')
+
   React.useEffect(() => {
     if (flightsdetails?.length !== 0) {
       const countryCodes = flightsdetails.map(item => item.DEP_COUNTRY)

@@ -23,6 +23,35 @@ class MainControllerClass {
         .send({ success: false, message: "Somthing went wrong!", data: error });
     }
   });
+  postAircraftClass = catchAsync(async (req: Request, res: Response) => {
+    try {
+      const insertcollection = await mainService.getFlightDetails(req);
+      return res.status(httpStatus.CREATED).send({
+        success: true,
+        message: "Your Form has subbmitted successfully",
+        data: insertcollection,
+      });
+    } catch (error) {
+      return res
+        .status(httpStatus.BAD_REQUEST)
+        .send({ success: false, message: "Somthing went wrong!", data: error });
+    }
+  });
+
+  getAirCraftClass = catchAsync(async (req: Request, res: Response) => {
+    try {
+      const insertcollection = await mainService.getAirCraftClass(req);
+      return res.status(httpStatus.CREATED).send({
+        success: true,
+        message: "Your Form has subbmitted successfully",
+        data: insertcollection,
+      });
+    } catch (error) {
+      return res
+        .status(httpStatus.BAD_REQUEST)
+        .send({ success: false, message: "Somthing went wrong!", data: error });
+    }
+  });
 }
 
 export const MainController = new MainControllerClass();

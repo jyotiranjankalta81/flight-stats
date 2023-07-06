@@ -46,4 +46,6 @@ export interface flightdetailsinterface {
   ARR_COUNTRY: string;
   HEX: string;
   IS_FLEET?: string;
+  AIRCRAFTS_CLASS: string;
+  CLASS_ID?: string;
 }

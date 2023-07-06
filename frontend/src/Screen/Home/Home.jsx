@@ -71,7 +71,7 @@ const Home = () => {
   const [dataof2020period, set2020Period] = React.useState()
 
   // console.log('lineselec', lineselection_type)
-  // console.log('changes_type', change_type)
+  console.log('change_type', change_type)
 
   const dispatch = useDispatch()
   const { flightsdetails } = useSelector(state => state.admin)
@@ -79,7 +79,7 @@ const Home = () => {
   // console.log('flightdetails', flightdetails)
   // console.log('flightsdetails', flightsdetails)
   // console.log('flighthour', flighthours)
-  // console.log('hours', hours)
+  // console.log('repeting')
   // console.log('changetypes', change_type)
   // console.log('setbytime', databytime)
   // console.log('yearwise', yearwise)
@@ -93,7 +93,7 @@ const Home = () => {
   // console.log('prevperiod', dataofprevperiod)
   // console.log('dataof2022', dataof2022period)
   // console.log('dataof2021', dataof2021period)
-  // console.log('dataof2020', dataof2020period)
+  console.log('dataof2020', dataof2020period)
 
   const resetAll = () => {
     setJetclass('')
@@ -101,6 +101,7 @@ const Home = () => {
     setModel('')
     setCountry('')
     setDaterange({ startDate: '', endDate: '' })
+    window.location.reload(true)
   }
 
   // Filter function based on selected properties and values
@@ -370,7 +371,9 @@ const Home = () => {
     // })
 
     // Extract unique values for each property
-    const uniqueEngineTypes = [...new Set(filteredArray.map(obj => obj.ENGINE))]
+    const uniqueEngineTypes = [
+      ...new Set(filteredArray.map(obj => obj.AIRCRAFTS_CLASS))
+    ]
     const uniqueManufacturers = [
       ...new Set(filteredArray.map(obj => obj.MANUFACTURER))
     ]
@@ -442,613 +445,613 @@ const Home = () => {
     })
   }
 
-  function geteverythingCount (data) {
-    // Assuming you have the array of objects stored in a variable called 'data'
-    const countryData = [
-      { name: 'Afghanistan', code: 'AF' },
-      { name: 'Åland Islands', code: 'AX' },
-      { name: 'Albania', code: 'AL' },
-      { name: 'Algeria', code: 'DZ' },
-      { name: 'American Samoa', code: 'AS' },
-      { name: 'AndorrA', code: 'AD' },
-      { name: 'Angola', code: 'AO' },
-      { name: 'Anguilla', code: 'AI' },
-      { name: 'Antarctica', code: 'AQ' },
-      { name: 'Antigua and Barbuda', code: 'AG' },
-      { name: 'Argentina', code: 'AR' },
-      { name: 'Armenia', code: 'AM' },
-      { name: 'Aruba', code: 'AW' },
-      { name: 'Australia', code: 'AU' },
-      { name: 'Austria', code: 'AT' },
-      { name: 'Azerbaijan', code: 'AZ' },
-      { name: 'Bahamas', code: 'BS' },
-      { name: 'Bahrain', code: 'BH' },
-      { name: 'Bangladesh', code: 'BD' },
-      { name: 'Barbados', code: 'BB' },
-      { name: 'Belarus', code: 'BY' },
-      { name: 'Belgium', code: 'BE' },
-      { name: 'Belize', code: 'BZ' },
-      { name: 'Benin', code: 'BJ' },
-      { name: 'Bermuda', code: 'BM' },
-      { name: 'Bhutan', code: 'BT' },
-      { name: 'Bolivia', code: 'BO' },
-      { name: 'Bosnia and Herzegovina', code: 'BA' },
-      { name: 'Botswana', code: 'BW' },
-      { name: 'Bouvet Island', code: 'BV' },
-      { name: 'Brazil', code: 'BR' },
-      { name: 'British Indian Ocean Territory', code: 'IO' },
-      { name: 'Brunei Darussalam', code: 'BN' },
-      { name: 'Bulgaria', code: 'BG' },
-      { name: 'Burkina Faso', code: 'BF' },
-      { name: 'Burundi', code: 'BI' },
-      { name: 'Cambodia', code: 'KH' },
-      { name: 'Cameroon', code: 'CM' },
-      { name: 'Canada', code: 'CA' },
-      { name: 'Cape Verde', code: 'CV' },
-      { name: 'Cayman Islands', code: 'KY' },
-      { name: 'Central African Republic', code: 'CF' },
-      { name: 'Chad', code: 'TD' },
-      { name: 'Chile', code: 'CL' },
-      { name: 'China', code: 'CN' },
-      { name: 'Christmas Island', code: 'CX' },
-      { name: 'Cocos (Keeling) Islands', code: 'CC' },
-      { name: 'Colombia', code: 'CO' },
-      { name: 'Comoros', code: 'KM' },
-      { name: 'Congo', code: 'CG' },
-      { name: 'Congo, The Democratic Republic of the', code: 'CD' },
-      { name: 'Cook Islands', code: 'CK' },
-      { name: 'Costa Rica', code: 'CR' },
-      { name: "Cote D'Ivoire", code: 'CI' },
-      { name: 'Croatia', code: 'HR' },
-      { name: 'Cuba', code: 'CU' },
-      { name: 'Cyprus', code: 'CY' },
-      { name: 'Czech Republic', code: 'CZ' },
-      { name: 'Denmark', code: 'DK' },
-      { name: 'Djibouti', code: 'DJ' },
-      { name: 'Dominica', code: 'DM' },
-      { name: 'Dominican Republic', code: 'DO' },
-      { name: 'Ecuador', code: 'EC' },
-      { name: 'Egypt', code: 'EG' },
-      { name: 'El Salvador', code: 'SV' },
-      { name: 'Equatorial Guinea', code: 'GQ' },
-      { name: 'Eritrea', code: 'ER' },
-      { name: 'Estonia', code: 'EE' },
-      { name: 'Ethiopia', code: 'ET' },
-      { name: 'Falkland Islands (Malvinas)', code: 'FK' },
-      { name: 'Faroe Islands', code: 'FO' },
-      { name: 'Fiji', code: 'FJ' },
-      { name: 'Finland', code: 'FI' },
-      { name: 'France', code: 'FR' },
-      { name: 'French Guiana', code: 'GF' },
-      { name: 'French Polynesia', code: 'PF' },
-      { name: 'French Southern Territories', code: 'TF' },
-      { name: 'Gabon', code: 'GA' },
-      { name: 'Gambia', code: 'GM' },
-      { name: 'Georgia', code: 'GE' },
-      { name: 'Germany', code: 'DE' },
-      { name: 'Ghana', code: 'GH' },
-      { name: 'Gibraltar', code: 'GI' },
-      { name: 'Greece', code: 'GR' },
-      { name: 'Greenland', code: 'GL' },
-      { name: 'Grenada', code: 'GD' },
-      { name: 'Guadeloupe', code: 'GP' },
-      { name: 'Guam', code: 'GU' },
-      { name: 'Guatemala', code: 'GT' },
-      { name: 'Guernsey', code: 'GG' },
-      { name: 'Guinea', code: 'GN' },
-      { name: 'Guinea-Bissau', code: 'GW' },
-      { name: 'Guyana', code: 'GY' },
-      { name: 'Haiti', code: 'HT' },
-      { name: 'Heard Island and Mcdonald Islands', code: 'HM' },
-      { name: 'Holy See (Vatican City State)', code: 'VA' },
-      { name: 'Honduras', code: 'HN' },
-      { name: 'Hong Kong', code: 'HK' },
-      { name: 'Hungary', code: 'HU' },
-      { name: 'Iceland', code: 'IS' },
-      { name: 'India', code: 'IN' },
-      { name: 'Indonesia', code: 'ID' },
-      { name: 'Iran, Islamic Republic Of', code: 'IR' },
-      { name: 'Iraq', code: 'IQ' },
-      { name: 'Ireland', code: 'IE' },
-      { name: 'Isle of Man', code: 'IM' },
-      { name: 'Israel', code: 'IL' },
-      { name: 'Italy', code: 'IT' },
-      { name: 'Jamaica', code: 'JM' },
-      { name: 'Japan', code: 'JP' },
-      { name: 'Jersey', code: 'JE' },
-      { name: 'Jordan', code: 'JO' },
-      { name: 'Kazakhstan', code: 'KZ' },
-      { name: 'Kenya', code: 'KE' },
-      { name: 'Kiribati', code: 'KI' },
-      { name: "Korea, Democratic People'S Republic of", code: 'KP' },
-      { name: 'Korea, Republic of', code: 'KR' },
-      { name: 'Kuwait', code: 'KW' },
-      { name: 'Kyrgyzstan', code: 'KG' },
-      { name: "Lao People'S Democratic Republic", code: 'LA' },
-      { name: 'Latvia', code: 'LV' },
-      { name: 'Lebanon', code: 'LB' },
-      { name: 'Lesotho', code: 'LS' },
-      { name: 'Liberia', code: 'LR' },
-      { name: 'Libyan Arab Jamahiriya', code: 'LY' },
-      { name: 'Liechtenstein', code: 'LI' },
-      { name: 'Lithuania', code: 'LT' },
-      { name: 'Luxembourg', code: 'LU' },
-      { name: 'Macao', code: 'MO' },
-      { name: 'Macedonia, The Former Yugoslav Republic of', code: 'MK' },
-      { name: 'Madagascar', code: 'MG' },
-      { name: 'Malawi', code: 'MW' },
-      { name: 'Malaysia', code: 'MY' },
-      { name: 'Maldives', code: 'MV' },
-      { name: 'Mali', code: 'ML' },
-      { name: 'Malta', code: 'MT' },
-      { name: 'Marshall Islands', code: 'MH' },
-      { name: 'Martinique', code: 'MQ' },
-      { name: 'Mauritania', code: 'MR' },
-      { name: 'Mauritius', code: 'MU' },
-      { name: 'Mayotte', code: 'YT' },
-      { name: 'Mexico', code: 'MX' },
-      { name: 'Micronesia, Federated States of', code: 'FM' },
-      { name: 'Moldova, Republic of', code: 'MD' },
-      { name: 'Monaco', code: 'MC' },
-      { name: 'Mongolia', code: 'MN' },
-      { name: 'Montserrat', code: 'MS' },
-      { name: 'Morocco', code: 'MA' },
-      { name: 'Mozambique', code: 'MZ' },
-      { name: 'Myanmar', code: 'MM' },
-      { name: 'Namibia', code: 'NA' },
-      { name: 'Nauru', code: 'NR' },
-      { name: 'Nepal', code: 'NP' },
-      { name: 'Netherlands', code: 'NL' },
-      { name: 'Netherlands Antilles', code: 'AN' },
-      { name: 'New Caledonia', code: 'NC' },
-      { name: 'New Zealand', code: 'NZ' },
-      { name: 'Nicaragua', code: 'NI' },
-      { name: 'Niger', code: 'NE' },
-      { name: 'Nigeria', code: 'NG' },
-      { name: 'Niue', code: 'NU' },
-      { name: 'Norfolk Island', code: 'NF' },
-      { name: 'Northern Mariana Islands', code: 'MP' },
-      { name: 'Norway', code: 'NO' },
-      { name: 'Oman', code: 'OM' },
-      { name: 'Pakistan', code: 'PK' },
-      { name: 'Palau', code: 'PW' },
-      { name: 'Palestinian Territory, Occupied', code: 'PS' },
-      { name: 'Panama', code: 'PA' },
-      { name: 'Papua New Guinea', code: 'PG' },
-      { name: 'Paraguay', code: 'PY' },
-      { name: 'Peru', code: 'PE' },
-      { name: 'Philippines', code: 'PH' },
-      { name: 'Pitcairn', code: 'PN' },
-      { name: 'Poland', code: 'PL' },
-      { name: 'Portugal', code: 'PT' },
-      { name: 'Puerto Rico', code: 'PR' },
-      { name: 'Qatar', code: 'QA' },
-      { name: 'Reunion', code: 'RE' },
-      { name: 'Romania', code: 'RO' },
-      { name: 'Russian Federation', code: 'RU' },
-      { name: 'RWANDA', code: 'RW' },
-      { name: 'Saint Helena', code: 'SH' },
-      { name: 'Saint Kitts and Nevis', code: 'KN' },
-      { name: 'Saint Lucia', code: 'LC' },
-      { name: 'Saint Pierre and Miquelon', code: 'PM' },
-      { name: 'Saint Vincent and the Grenadines', code: 'VC' },
-      { name: 'Samoa', code: 'WS' },
-      { name: 'San Marino', code: 'SM' },
-      { name: 'Sao Tome and Principe', code: 'ST' },
-      { name: 'Saudi Arabia', code: 'SA' },
-      { name: 'Senegal', code: 'SN' },
-      { name: 'Serbia and Montenegro', code: 'CS' },
-      { name: 'Seychelles', code: 'SC' },
-      { name: 'Sierra Leone', code: 'SL' },
-      { name: 'Singapore', code: 'SG' },
-      { name: 'Slovakia', code: 'SK' },
-      { name: 'Slovenia', code: 'SI' },
-      { name: 'Solomon Islands', code: 'SB' },
-      { name: 'Somalia', code: 'SO' },
-      { name: 'South Africa', code: 'ZA' },
-      { name: 'South Georgia and the South Sandwich Islands', code: 'GS' },
-      { name: 'Spain', code: 'ES' },
-      { name: 'Sri Lanka', code: 'LK' },
-      { name: 'Sudan', code: 'SD' },
-      { name: 'Suriname', code: 'SR' },
-      { name: 'Svalbard and Jan Mayen', code: 'SJ' },
-      { name: 'Swaziland', code: 'SZ' },
-      { name: 'Sweden', code: 'SE' },
-      { name: 'Switzerland', code: 'CH' },
-      { name: 'Syrian Arab Republic', code: 'SY' },
-      { name: 'Taiwan, Province of China', code: 'TW' },
-      { name: 'Tajikistan', code: 'TJ' },
-      { name: 'Tanzania, United Republic of', code: 'TZ' },
-      { name: 'Thailand', code: 'TH' },
-      { name: 'Timor-Leste', code: 'TL' },
-      { name: 'Togo', code: 'TG' },
-      { name: 'Tokelau', code: 'TK' },
-      { name: 'Tonga', code: 'TO' },
-      { name: 'Trinidad and Tobago', code: 'TT' },
-      { name: 'Tunisia', code: 'TN' },
-      { name: 'Turkey', code: 'TR' },
-      { name: 'Turkmenistan', code: 'TM' },
-      { name: 'Turks and Caicos Islands', code: 'TC' },
-      { name: 'Tuvalu', code: 'TV' },
-      { name: 'Uganda', code: 'UG' },
-      { name: 'Ukraine', code: 'UA' },
-      { name: 'United Arab Emirates', code: 'AE' },
-      { name: 'United Kingdom', code: 'GB' },
-      { name: 'United States', code: 'US' },
-      { name: 'United States Minor Outlying Islands', code: 'UM' },
-      { name: 'Uruguay', code: 'UY' },
-      { name: 'Uzbekistan', code: 'UZ' },
-      { name: 'Vanuatu', code: 'VU' },
-      { name: 'Venezuela', code: 'VE' },
-      { name: 'Viet Nam', code: 'VN' },
-      { name: 'Virgin Islands, British', code: 'VG' },
-      { name: 'Virgin Islands, U.S.', code: 'VI' },
-      { name: 'Wallis and Futuna', code: 'WF' },
-      { name: 'Western Sahara', code: 'EH' },
-      { name: 'Yemen', code: 'YE' },
-      { name: 'Zambia', code: 'ZM' },
-      { name: 'Zimbabwe', code: 'ZW' }
-    ]
+  // function geteverythingCount (data) {
+  //   // Assuming you have the array of objects stored in a variable called 'data'
+  //   const countryData = [
+  //     { name: 'Afghanistan', code: 'AF' },
+  //     { name: 'Åland Islands', code: 'AX' },
+  //     { name: 'Albania', code: 'AL' },
+  //     { name: 'Algeria', code: 'DZ' },
+  //     { name: 'American Samoa', code: 'AS' },
+  //     { name: 'AndorrA', code: 'AD' },
+  //     { name: 'Angola', code: 'AO' },
+  //     { name: 'Anguilla', code: 'AI' },
+  //     { name: 'Antarctica', code: 'AQ' },
+  //     { name: 'Antigua and Barbuda', code: 'AG' },
+  //     { name: 'Argentina', code: 'AR' },
+  //     { name: 'Armenia', code: 'AM' },
+  //     { name: 'Aruba', code: 'AW' },
+  //     { name: 'Australia', code: 'AU' },
+  //     { name: 'Austria', code: 'AT' },
+  //     { name: 'Azerbaijan', code: 'AZ' },
+  //     { name: 'Bahamas', code: 'BS' },
+  //     { name: 'Bahrain', code: 'BH' },
+  //     { name: 'Bangladesh', code: 'BD' },
+  //     { name: 'Barbados', code: 'BB' },
+  //     { name: 'Belarus', code: 'BY' },
+  //     { name: 'Belgium', code: 'BE' },
+  //     { name: 'Belize', code: 'BZ' },
+  //     { name: 'Benin', code: 'BJ' },
+  //     { name: 'Bermuda', code: 'BM' },
+  //     { name: 'Bhutan', code: 'BT' },
+  //     { name: 'Bolivia', code: 'BO' },
+  //     { name: 'Bosnia and Herzegovina', code: 'BA' },
+  //     { name: 'Botswana', code: 'BW' },
+  //     { name: 'Bouvet Island', code: 'BV' },
+  //     { name: 'Brazil', code: 'BR' },
+  //     { name: 'British Indian Ocean Territory', code: 'IO' },
+  //     { name: 'Brunei Darussalam', code: 'BN' },
+  //     { name: 'Bulgaria', code: 'BG' },
+  //     { name: 'Burkina Faso', code: 'BF' },
+  //     { name: 'Burundi', code: 'BI' },
+  //     { name: 'Cambodia', code: 'KH' },
+  //     { name: 'Cameroon', code: 'CM' },
+  //     { name: 'Canada', code: 'CA' },
+  //     { name: 'Cape Verde', code: 'CV' },
+  //     { name: 'Cayman Islands', code: 'KY' },
+  //     { name: 'Central African Republic', code: 'CF' },
+  //     { name: 'Chad', code: 'TD' },
+  //     { name: 'Chile', code: 'CL' },
+  //     { name: 'China', code: 'CN' },
+  //     { name: 'Christmas Island', code: 'CX' },
+  //     { name: 'Cocos (Keeling) Islands', code: 'CC' },
+  //     { name: 'Colombia', code: 'CO' },
+  //     { name: 'Comoros', code: 'KM' },
+  //     { name: 'Congo', code: 'CG' },
+  //     { name: 'Congo, The Democratic Republic of the', code: 'CD' },
+  //     { name: 'Cook Islands', code: 'CK' },
+  //     { name: 'Costa Rica', code: 'CR' },
+  //     { name: "Cote D'Ivoire", code: 'CI' },
+  //     { name: 'Croatia', code: 'HR' },
+  //     { name: 'Cuba', code: 'CU' },
+  //     { name: 'Cyprus', code: 'CY' },
+  //     { name: 'Czech Republic', code: 'CZ' },
+  //     { name: 'Denmark', code: 'DK' },
+  //     { name: 'Djibouti', code: 'DJ' },
+  //     { name: 'Dominica', code: 'DM' },
+  //     { name: 'Dominican Republic', code: 'DO' },
+  //     { name: 'Ecuador', code: 'EC' },
+  //     { name: 'Egypt', code: 'EG' },
+  //     { name: 'El Salvador', code: 'SV' },
+  //     { name: 'Equatorial Guinea', code: 'GQ' },
+  //     { name: 'Eritrea', code: 'ER' },
+  //     { name: 'Estonia', code: 'EE' },
+  //     { name: 'Ethiopia', code: 'ET' },
+  //     { name: 'Falkland Islands (Malvinas)', code: 'FK' },
+  //     { name: 'Faroe Islands', code: 'FO' },
+  //     { name: 'Fiji', code: 'FJ' },
+  //     { name: 'Finland', code: 'FI' },
+  //     { name: 'France', code: 'FR' },
+  //     { name: 'French Guiana', code: 'GF' },
+  //     { name: 'French Polynesia', code: 'PF' },
+  //     { name: 'French Southern Territories', code: 'TF' },
+  //     { name: 'Gabon', code: 'GA' },
+  //     { name: 'Gambia', code: 'GM' },
+  //     { name: 'Georgia', code: 'GE' },
+  //     { name: 'Germany', code: 'DE' },
+  //     { name: 'Ghana', code: 'GH' },
+  //     { name: 'Gibraltar', code: 'GI' },
+  //     { name: 'Greece', code: 'GR' },
+  //     { name: 'Greenland', code: 'GL' },
+  //     { name: 'Grenada', code: 'GD' },
+  //     { name: 'Guadeloupe', code: 'GP' },
+  //     { name: 'Guam', code: 'GU' },
+  //     { name: 'Guatemala', code: 'GT' },
+  //     { name: 'Guernsey', code: 'GG' },
+  //     { name: 'Guinea', code: 'GN' },
+  //     { name: 'Guinea-Bissau', code: 'GW' },
+  //     { name: 'Guyana', code: 'GY' },
+  //     { name: 'Haiti', code: 'HT' },
+  //     { name: 'Heard Island and Mcdonald Islands', code: 'HM' },
+  //     { name: 'Holy See (Vatican City State)', code: 'VA' },
+  //     { name: 'Honduras', code: 'HN' },
+  //     { name: 'Hong Kong', code: 'HK' },
+  //     { name: 'Hungary', code: 'HU' },
+  //     { name: 'Iceland', code: 'IS' },
+  //     { name: 'India', code: 'IN' },
+  //     { name: 'Indonesia', code: 'ID' },
+  //     { name: 'Iran, Islamic Republic Of', code: 'IR' },
+  //     { name: 'Iraq', code: 'IQ' },
+  //     { name: 'Ireland', code: 'IE' },
+  //     { name: 'Isle of Man', code: 'IM' },
+  //     { name: 'Israel', code: 'IL' },
+  //     { name: 'Italy', code: 'IT' },
+  //     { name: 'Jamaica', code: 'JM' },
+  //     { name: 'Japan', code: 'JP' },
+  //     { name: 'Jersey', code: 'JE' },
+  //     { name: 'Jordan', code: 'JO' },
+  //     { name: 'Kazakhstan', code: 'KZ' },
+  //     { name: 'Kenya', code: 'KE' },
+  //     { name: 'Kiribati', code: 'KI' },
+  //     { name: "Korea, Democratic People'S Republic of", code: 'KP' },
+  //     { name: 'Korea, Republic of', code: 'KR' },
+  //     { name: 'Kuwait', code: 'KW' },
+  //     { name: 'Kyrgyzstan', code: 'KG' },
+  //     { name: "Lao People'S Democratic Republic", code: 'LA' },
+  //     { name: 'Latvia', code: 'LV' },
+  //     { name: 'Lebanon', code: 'LB' },
+  //     { name: 'Lesotho', code: 'LS' },
+  //     { name: 'Liberia', code: 'LR' },
+  //     { name: 'Libyan Arab Jamahiriya', code: 'LY' },
+  //     { name: 'Liechtenstein', code: 'LI' },
+  //     { name: 'Lithuania', code: 'LT' },
+  //     { name: 'Luxembourg', code: 'LU' },
+  //     { name: 'Macao', code: 'MO' },
+  //     { name: 'Macedonia, The Former Yugoslav Republic of', code: 'MK' },
+  //     { name: 'Madagascar', code: 'MG' },
+  //     { name: 'Malawi', code: 'MW' },
+  //     { name: 'Malaysia', code: 'MY' },
+  //     { name: 'Maldives', code: 'MV' },
+  //     { name: 'Mali', code: 'ML' },
+  //     { name: 'Malta', code: 'MT' },
+  //     { name: 'Marshall Islands', code: 'MH' },
+  //     { name: 'Martinique', code: 'MQ' },
+  //     { name: 'Mauritania', code: 'MR' },
+  //     { name: 'Mauritius', code: 'MU' },
+  //     { name: 'Mayotte', code: 'YT' },
+  //     { name: 'Mexico', code: 'MX' },
+  //     { name: 'Micronesia, Federated States of', code: 'FM' },
+  //     { name: 'Moldova, Republic of', code: 'MD' },
+  //     { name: 'Monaco', code: 'MC' },
+  //     { name: 'Mongolia', code: 'MN' },
+  //     { name: 'Montserrat', code: 'MS' },
+  //     { name: 'Morocco', code: 'MA' },
+  //     { name: 'Mozambique', code: 'MZ' },
+  //     { name: 'Myanmar', code: 'MM' },
+  //     { name: 'Namibia', code: 'NA' },
+  //     { name: 'Nauru', code: 'NR' },
+  //     { name: 'Nepal', code: 'NP' },
+  //     { name: 'Netherlands', code: 'NL' },
+  //     { name: 'Netherlands Antilles', code: 'AN' },
+  //     { name: 'New Caledonia', code: 'NC' },
+  //     { name: 'New Zealand', code: 'NZ' },
+  //     { name: 'Nicaragua', code: 'NI' },
+  //     { name: 'Niger', code: 'NE' },
+  //     { name: 'Nigeria', code: 'NG' },
+  //     { name: 'Niue', code: 'NU' },
+  //     { name: 'Norfolk Island', code: 'NF' },
+  //     { name: 'Northern Mariana Islands', code: 'MP' },
+  //     { name: 'Norway', code: 'NO' },
+  //     { name: 'Oman', code: 'OM' },
+  //     { name: 'Pakistan', code: 'PK' },
+  //     { name: 'Palau', code: 'PW' },
+  //     { name: 'Palestinian Territory, Occupied', code: 'PS' },
+  //     { name: 'Panama', code: 'PA' },
+  //     { name: 'Papua New Guinea', code: 'PG' },
+  //     { name: 'Paraguay', code: 'PY' },
+  //     { name: 'Peru', code: 'PE' },
+  //     { name: 'Philippines', code: 'PH' },
+  //     { name: 'Pitcairn', code: 'PN' },
+  //     { name: 'Poland', code: 'PL' },
+  //     { name: 'Portugal', code: 'PT' },
+  //     { name: 'Puerto Rico', code: 'PR' },
+  //     { name: 'Qatar', code: 'QA' },
+  //     { name: 'Reunion', code: 'RE' },
+  //     { name: 'Romania', code: 'RO' },
+  //     { name: 'Russian Federation', code: 'RU' },
+  //     { name: 'RWANDA', code: 'RW' },
+  //     { name: 'Saint Helena', code: 'SH' },
+  //     { name: 'Saint Kitts and Nevis', code: 'KN' },
+  //     { name: 'Saint Lucia', code: 'LC' },
+  //     { name: 'Saint Pierre and Miquelon', code: 'PM' },
+  //     { name: 'Saint Vincent and the Grenadines', code: 'VC' },
+  //     { name: 'Samoa', code: 'WS' },
+  //     { name: 'San Marino', code: 'SM' },
+  //     { name: 'Sao Tome and Principe', code: 'ST' },
+  //     { name: 'Saudi Arabia', code: 'SA' },
+  //     { name: 'Senegal', code: 'SN' },
+  //     { name: 'Serbia and Montenegro', code: 'CS' },
+  //     { name: 'Seychelles', code: 'SC' },
+  //     { name: 'Sierra Leone', code: 'SL' },
+  //     { name: 'Singapore', code: 'SG' },
+  //     { name: 'Slovakia', code: 'SK' },
+  //     { name: 'Slovenia', code: 'SI' },
+  //     { name: 'Solomon Islands', code: 'SB' },
+  //     { name: 'Somalia', code: 'SO' },
+  //     { name: 'South Africa', code: 'ZA' },
+  //     { name: 'South Georgia and the South Sandwich Islands', code: 'GS' },
+  //     { name: 'Spain', code: 'ES' },
+  //     { name: 'Sri Lanka', code: 'LK' },
+  //     { name: 'Sudan', code: 'SD' },
+  //     { name: 'Suriname', code: 'SR' },
+  //     { name: 'Svalbard and Jan Mayen', code: 'SJ' },
+  //     { name: 'Swaziland', code: 'SZ' },
+  //     { name: 'Sweden', code: 'SE' },
+  //     { name: 'Switzerland', code: 'CH' },
+  //     { name: 'Syrian Arab Republic', code: 'SY' },
+  //     { name: 'Taiwan, Province of China', code: 'TW' },
+  //     { name: 'Tajikistan', code: 'TJ' },
+  //     { name: 'Tanzania, United Republic of', code: 'TZ' },
+  //     { name: 'Thailand', code: 'TH' },
+  //     { name: 'Timor-Leste', code: 'TL' },
+  //     { name: 'Togo', code: 'TG' },
+  //     { name: 'Tokelau', code: 'TK' },
+  //     { name: 'Tonga', code: 'TO' },
+  //     { name: 'Trinidad and Tobago', code: 'TT' },
+  //     { name: 'Tunisia', code: 'TN' },
+  //     { name: 'Turkey', code: 'TR' },
+  //     { name: 'Turkmenistan', code: 'TM' },
+  //     { name: 'Turks and Caicos Islands', code: 'TC' },
+  //     { name: 'Tuvalu', code: 'TV' },
+  //     { name: 'Uganda', code: 'UG' },
+  //     { name: 'Ukraine', code: 'UA' },
+  //     { name: 'United Arab Emirates', code: 'AE' },
+  //     { name: 'United Kingdom', code: 'GB' },
+  //     { name: 'United States', code: 'US' },
+  //     { name: 'United States Minor Outlying Islands', code: 'UM' },
+  //     { name: 'Uruguay', code: 'UY' },
+  //     { name: 'Uzbekistan', code: 'UZ' },
+  //     { name: 'Vanuatu', code: 'VU' },
+  //     { name: 'Venezuela', code: 'VE' },
+  //     { name: 'Viet Nam', code: 'VN' },
+  //     { name: 'Virgin Islands, British', code: 'VG' },
+  //     { name: 'Virgin Islands, U.S.', code: 'VI' },
+  //     { name: 'Wallis and Futuna', code: 'WF' },
+  //     { name: 'Western Sahara', code: 'EH' },
+  //     { name: 'Yemen', code: 'YE' },
+  //     { name: 'Zambia', code: 'ZM' },
+  //     { name: 'Zimbabwe', code: 'ZW' }
+  //   ]
 
-    const departureCountryCounts = []
-    const departureCityCounts = []
-    const airportNameCounts = []
-    const engineTypeCounts = []
-    const manufacturerCounts = []
-    const flightModelCounts = []
+  //   const departureCountryCounts = []
+  //   const departureCityCounts = []
+  //   const airportNameCounts = []
+  //   const engineTypeCounts = []
+  //   const manufacturerCounts = []
+  //   const flightModelCounts = []
 
-    // Iterate over the data array
-    data.forEach(obj => {
-      // Count departure country
-      if (obj.DEP_COUNTRY !== '0') {
-        const departureCountryCode = obj.DEP_COUNTRY
-        const departureCountryName = countryData.find(
-          country => country.code === departureCountryCode
-        )?.name
-        if (departureCountryName) {
-          departureCountryCounts[departureCountryName] =
-            (departureCountryCounts[departureCountryName] || 0) + 1
-        }
-      }
+  //   // Iterate over the data array
+  //   data.forEach(obj => {
+  //     // Count departure country
+  //     if (obj.DEP_COUNTRY !== '0') {
+  //       const departureCountryCode = obj.DEP_COUNTRY
+  //       const departureCountryName = countryData.find(
+  //         country => country.code === departureCountryCode
+  //       )?.name
+  //       if (departureCountryName) {
+  //         departureCountryCounts[departureCountryName] =
+  //           (departureCountryCounts[departureCountryName] || 0) + 1
+  //       }
+  //     }
 
-      // Count departure city
-      if (obj.DEP_CITY !== '0') {
-        const departureCity = obj.DEP_CITY
-        departureCityCounts[departureCity] =
-          (departureCityCounts[departureCity] || 0) + 1
-      }
+  //     // Count departure city
+  //     if (obj.DEP_CITY !== '0') {
+  //       const departureCity = obj.DEP_CITY
+  //       departureCityCounts[departureCity] =
+  //         (departureCityCounts[departureCity] || 0) + 1
+  //     }
 
-      // Count airport name
-      if (obj.DEP_NAME !== '0') {
-        const airportName = obj.DEP_NAME
-        airportNameCounts[airportName] =
-          (airportNameCounts[airportName] || 0) + 1
-      }
+  //     // Count airport name
+  //     if (obj.DEP_NAME !== '0') {
+  //       const airportName = obj.DEP_NAME
+  //       airportNameCounts[airportName] =
+  //         (airportNameCounts[airportName] || 0) + 1
+  //     }
 
-      // Count flight engine type
-      if (obj.ENGINE !== '0') {
-        const engineType = obj.ENGINE
-        engineTypeCounts[engineType] = (engineTypeCounts[engineType] || 0) + 1
-      }
+  //     // Count flight engine type
+  //     if (obj.ENGINE !== '0') {
+  //       const engineType = obj.ENGINE
+  //       engineTypeCounts[engineType] = (engineTypeCounts[engineType] || 0) + 1
+  //     }
 
-      // Count flight manufacturer
-      if (obj.MANUFACTURER !== '0') {
-        const manufacturer = obj.MANUFACTURER
-        manufacturerCounts[manufacturer] =
-          (manufacturerCounts[manufacturer] || 0) + 1
-      }
+  //     // Count flight manufacturer
+  //     if (obj.MANUFACTURER !== '0') {
+  //       const manufacturer = obj.MANUFACTURER
+  //       manufacturerCounts[manufacturer] =
+  //         (manufacturerCounts[manufacturer] || 0) + 1
+  //     }
 
-      // Count flight model
-      if (obj.MODEL !== '0') {
-        const flightModel = obj.MODEL
-        flightModelCounts[flightModel] =
-          (flightModelCounts[flightModel] || 0) + 1
-      }
-    })
+  //     // Count flight model
+  //     if (obj.MODEL !== '0') {
+  //       const flightModel = obj.MODEL
+  //       flightModelCounts[flightModel] =
+  //         (flightModelCounts[flightModel] || 0) + 1
+  //     }
+  //   })
 
-    // Convert the counts objects into arrays of objects
-    const departureCountryArray = Object.entries(departureCountryCounts).map(
-      ([key, value]) => ({
-        departureCountry: key,
-        count: value
-      })
-    )
+  //   // Convert the counts objects into arrays of objects
+  //   const departureCountryArray = Object.entries(departureCountryCounts).map(
+  //     ([key, value]) => ({
+  //       departureCountry: key,
+  //       count: value
+  //     })
+  //   )
 
-    const departureCityArray = Object.entries(departureCityCounts).map(
-      ([key, value]) => ({
-        departureCity: key,
-        count: value
-      })
-    )
+  //   const departureCityArray = Object.entries(departureCityCounts).map(
+  //     ([key, value]) => ({
+  //       departureCity: key,
+  //       count: value
+  //     })
+  //   )
 
-    const airportNameArray = Object.entries(airportNameCounts).map(
-      ([key, value]) => ({
-        airportName: key,
-        count: value
-      })
-    )
+  //   const airportNameArray = Object.entries(airportNameCounts).map(
+  //     ([key, value]) => ({
+  //       airportName: key,
+  //       count: value
+  //     })
+  //   )
 
-    const engineTypeArray = Object.entries(engineTypeCounts).map(
-      ([key, value]) => ({
-        engineType: key,
-        count: value
-      })
-    )
+  //   const engineTypeArray = Object.entries(engineTypeCounts).map(
+  //     ([key, value]) => ({
+  //       engineType: key,
+  //       count: value
+  //     })
+  //   )
 
-    const manufacturerArray = Object.entries(manufacturerCounts).map(
-      ([key, value]) => ({
-        manufacturer: key,
-        count: value
-      })
-    )
+  //   const manufacturerArray = Object.entries(manufacturerCounts).map(
+  //     ([key, value]) => ({
+  //       manufacturer: key,
+  //       count: value
+  //     })
+  //   )
 
-    const flightModelArray = Object.entries(flightModelCounts).map(
-      ([key, value]) => ({
-        flightModel: key,
-        count: value
-      })
-    )
+  //   const flightModelArray = Object.entries(flightModelCounts).map(
+  //     ([key, value]) => ({
+  //       flightModel: key,
+  //       count: value
+  //     })
+  //   )
 
-    // Output the counts array as JSON
-    // const countsJson = JSON.stringify(countsArray)
+  //   // Output the counts array as JSON
+  //   // const countsJson = JSON.stringify(countsArray)
 
-    return [
-      departureCountryArray.sort((a, b) => b.count - a.count),
-      departureCityArray.sort((a, b) => b.count - a.count),
-      airportNameArray.sort((a, b) => b.count - a.count),
-      engineTypeArray.sort((a, b) => b.count - a.count),
-      manufacturerArray.sort((a, b) => b.count - a.count),
-      flightModelArray.sort((a, b) => b.count - a.count)
-    ]
-  }
+  //   return [
+  //     departureCountryArray.sort((a, b) => b.count - a.count),
+  //     departureCityArray.sort((a, b) => b.count - a.count),
+  //     airportNameArray.sort((a, b) => b.count - a.count),
+  //     engineTypeArray.sort((a, b) => b.count - a.count),
+  //     manufacturerArray.sort((a, b) => b.count - a.count),
+  //     flightModelArray.sort((a, b) => b.count - a.count)
+  //   ]
+  // }
 
-  function flightdatawithSomePeriodTime (flightsData) {
-    // Assuming you have the array of flight data stored in a variable called 'flightsData'
+  // function flightdatawithSomePeriodTime (flightsData) {
+  //   // Assuming you have the array of flight data stored in a variable called 'flightsData'
 
-    // Function to get month name from month index
-    const getMonthName = monthIndex => {
-      const months = [
-        'Jan',
-        'Feb',
-        'Mar',
-        'Apr',
-        'May',
-        'Jun',
-        'Jul',
-        'Aug',
-        'Sep',
-        'Oct',
-        'Nov',
-        'Dec'
-      ]
-      return months[monthIndex]
-    }
+  //   // Function to get month name from month index
+  //   const getMonthName = monthIndex => {
+  //     const months = [
+  //       'Jan',
+  //       'Feb',
+  //       'Mar',
+  //       'Apr',
+  //       'May',
+  //       'Jun',
+  //       'Jul',
+  //       'Aug',
+  //       'Sep',
+  //       'Oct',
+  //       'Nov',
+  //       'Dec'
+  //     ]
+  //     return months[monthIndex]
+  //   }
 
-    // Function to get week number from day of the month
-    // const getWeekNumber = dayOfMonth => {
-    //   const weekNumber = Math.ceil(dayOfMonth / 7)
-    //   return weekNumber + 'st' // You can modify the formatting here for 'st', 'nd', 'rd', 'th' as needed
-    // }
+  //   // Function to get week number from day of the month
+  //   // const getWeekNumber = dayOfMonth => {
+  //   //   const weekNumber = Math.ceil(dayOfMonth / 7)
+  //   //   return weekNumber + 'st' // You can modify the formatting here for 'st', 'nd', 'rd', 'th' as needed
+  //   // }
 
-    const getDayOfWeek = dayOfWeekIndex => {
-      const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
-      return daysOfWeek[dayOfWeekIndex]
-    }
+  //   const getDayOfWeek = dayOfWeekIndex => {
+  //     const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+  //     return daysOfWeek[dayOfWeekIndex]
+  //   }
 
-    // Function to get hour range from hour value
-    const getHourRange = hour => {
-      const startHour = hour
-      const endHour = hour + 1
-      const formattedStartHour = startHour.toString().padStart(2, '0') + ':00'
-      const formattedEndHour = endHour.toString().padStart(2, '0') + ':00'
-      return formattedStartHour + ' - ' + formattedEndHour
-    }
+  //   // Function to get hour range from hour value
+  //   const getHourRange = hour => {
+  //     const startHour = hour
+  //     const endHour = hour + 1
+  //     const formattedStartHour = startHour.toString().padStart(2, '0') + ':00'
+  //     const formattedEndHour = endHour.toString().padStart(2, '0') + ':00'
+  //     return formattedStartHour + ' - ' + formattedEndHour
+  //   }
 
-    // const getWeekNumber = dayOfMonth => {
-    //   const weekNumber = Math.ceil(dayOfMonth / 7)
-    //   return weekNumber
-    // }
-    // Function to get week number using moment.js library
-    const getWeekNumber = date => {
-      return moment(date).isoWeek()
-    }
+  //   // const getWeekNumber = dayOfMonth => {
+  //   //   const weekNumber = Math.ceil(dayOfMonth / 7)
+  //   //   return weekNumber
+  //   // }
+  //   // Function to get week number using moment.js library
+  //   const getWeekNumber = date => {
+  //     return moment(date).isoWeek()
+  //   }
 
-    // Function to get the week range in the format "1st week", "2nd week", etc.
-    const getWeekRange = weekNumber => {
-      const suffix = getWeekSuffix(weekNumber)
-      return `${weekNumber}${suffix} week`
-    }
-    // Function to get the suffix for the week number (e.g., "st", "nd", "rd", "th")
-    const getWeekSuffix = weekNumber => {
-      if (weekNumber >= 11 && weekNumber <= 13) {
-        return 'th'
-      }
-      const lastDigit = weekNumber % 10
-      switch (lastDigit) {
-        case 1:
-          return 'st'
-        case 2:
-          return 'nd'
-        case 3:
-          return 'rd'
-        default:
-          return 'th'
-      }
-    }
+  //   // Function to get the week range in the format "1st week", "2nd week", etc.
+  //   const getWeekRange = weekNumber => {
+  //     const suffix = getWeekSuffix(weekNumber)
+  //     return `${weekNumber}${suffix} week`
+  //   }
+  //   // Function to get the suffix for the week number (e.g., "st", "nd", "rd", "th")
+  //   const getWeekSuffix = weekNumber => {
+  //     if (weekNumber >= 11 && weekNumber <= 13) {
+  //       return 'th'
+  //     }
+  //     const lastDigit = weekNumber % 10
+  //     switch (lastDigit) {
+  //       case 1:
+  //         return 'st'
+  //       case 2:
+  //         return 'nd'
+  //       case 3:
+  //         return 'rd'
+  //       default:
+  //         return 'th'
+  //     }
+  //   }
 
-    // Map to store the counts for each hour
-    const flightsPerHour = new Map()
+  //   // Map to store the counts for each hour
+  //   const flightsPerHour = new Map()
 
-    // Map to store the counts for each month
-    const flightsPerMonth = new Map()
+  //   // Map to store the counts for each month
+  //   const flightsPerMonth = new Map()
 
-    // Map to store the counts for each day of the week
-    const flightsPerDayOfWeek = new Map()
-    // Map to store the counts for each week
-    const flightsPerWeek = new Map()
+  //   // Map to store the counts for each day of the week
+  //   const flightsPerDayOfWeek = new Map()
+  //   // Map to store the counts for each week
+  //   const flightsPerWeek = new Map()
 
-    // Iterate over the flight data array
-    flightsData.forEach(flight => {
-      // Extract the flight number and departure time
-      const { DEP_ACTUAL } = flight
+  //   // Iterate over the flight data array
+  //   flightsData.forEach(flight => {
+  //     // Extract the flight number and departure time
+  //     const { DEP_ACTUAL } = flight
 
-      if (DEP_ACTUAL !== '0') {
-        // Create a Date object from the departure time string
-        const departureDate = new Date(DEP_ACTUAL)
+  //     if (DEP_ACTUAL !== '0') {
+  //       // Create a Date object from the departure time string
+  //       const departureDate = new Date(DEP_ACTUAL)
 
-        // Get the hour value from the departure time
-        const hour = departureDate.getHours()
+  //       // Get the hour value from the departure time
+  //       const hour = departureDate.getHours()
 
-        // Update the count for the corresponding hour in the map
-        if (flightsPerHour.has(hour)) {
-          flightsPerHour.set(hour, flightsPerHour.get(hour) + 1)
-        } else {
-          flightsPerHour.set(hour, 1)
-        }
+  //       // Update the count for the corresponding hour in the map
+  //       if (flightsPerHour.has(hour)) {
+  //         flightsPerHour.set(hour, flightsPerHour.get(hour) + 1)
+  //       } else {
+  //         flightsPerHour.set(hour, 1)
+  //       }
 
-        // Get the month value from the departure time
-        const month = departureDate.getMonth()
+  //       // Get the month value from the departure time
+  //       const month = departureDate.getMonth()
 
-        // Update the count for the corresponding month in the map
-        if (flightsPerMonth.has(month)) {
-          flightsPerMonth.set(month, flightsPerMonth.get(month) + 1)
-        } else {
-          flightsPerMonth.set(month, 1)
-        }
+  //       // Update the count for the corresponding month in the map
+  //       if (flightsPerMonth.has(month)) {
+  //         flightsPerMonth.set(month, flightsPerMonth.get(month) + 1)
+  //       } else {
+  //         flightsPerMonth.set(month, 1)
+  //       }
 
-        // Get the day of the week value (0: Sunday, 1: Monday, ..., 6: Saturday)
-        const dayOfWeek = departureDate.getDay()
+  //       // Get the day of the week value (0: Sunday, 1: Monday, ..., 6: Saturday)
+  //       const dayOfWeek = departureDate.getDay()
 
-        // Update the count for the corresponding day of the week in the map
-        if (flightsPerDayOfWeek.has(dayOfWeek)) {
-          flightsPerDayOfWeek.set(
-            dayOfWeek,
-            flightsPerDayOfWeek.get(dayOfWeek) + 1
-          )
-        } else {
-          flightsPerDayOfWeek.set(dayOfWeek, 1)
-        }
+  //       // Update the count for the corresponding day of the week in the map
+  //       if (flightsPerDayOfWeek.has(dayOfWeek)) {
+  //         flightsPerDayOfWeek.set(
+  //           dayOfWeek,
+  //           flightsPerDayOfWeek.get(dayOfWeek) + 1
+  //         )
+  //       } else {
+  //         flightsPerDayOfWeek.set(dayOfWeek, 1)
+  //       }
 
-        // Get the week number of the year
-        const weekNumber = getWeekNumber(departureDate)
+  //       // Get the week number of the year
+  //       const weekNumber = getWeekNumber(departureDate)
 
-        // Update the count for the corresponding week in the map
-        if (flightsPerWeek.has(weekNumber)) {
-          flightsPerWeek.set(weekNumber, flightsPerWeek.get(weekNumber) + 1)
-        } else {
-          flightsPerWeek.set(weekNumber, 1)
-        }
-      }
-    })
+  //       // Update the count for the corresponding week in the map
+  //       if (flightsPerWeek.has(weekNumber)) {
+  //         flightsPerWeek.set(weekNumber, flightsPerWeek.get(weekNumber) + 1)
+  //       } else {
+  //         flightsPerWeek.set(weekNumber, 1)
+  //       }
+  //     }
+  //   })
 
-    // Convert the flightsPerHour map into an array of objects with formatted data
-    const flightsPerHourArray = Array.from(flightsPerHour, ([hour, count]) => ({
-      hourRange: getHourRange(hour),
-      count: count
-    }))
+  //   // Convert the flightsPerHour map into an array of objects with formatted data
+  //   const flightsPerHourArray = Array.from(flightsPerHour, ([hour, count]) => ({
+  //     hourRange: getHourRange(hour),
+  //     count: count
+  //   }))
 
-    // Convert the flightsPerMonth map into an array of objects with formatted data
-    const flightsPerMonthArray = Array.from(
-      flightsPerMonth,
-      ([month, count]) => ({
-        monthName: getMonthName(month),
-        count: count
-      })
-    )
+  //   // Convert the flightsPerMonth map into an array of objects with formatted data
+  //   const flightsPerMonthArray = Array.from(
+  //     flightsPerMonth,
+  //     ([month, count]) => ({
+  //       monthName: getMonthName(month),
+  //       count: count
+  //     })
+  //   )
 
-    // Convert the flightsPerDayOfWeek
-    // ... (previous code)
+  //   // Convert the flightsPerDayOfWeek
+  //   // ... (previous code)
 
-    // Convert the flightsPerDayOfWeek map into an array of objects with formatted data
-    const flightsPerDayOfWeekArray = Array.from(
-      flightsPerDayOfWeek,
-      ([dayOfWeek, count]) => ({
-        dayOfWeek: getDayOfWeek(dayOfWeek),
-        count: count
-      })
-    )
+  //   // Convert the flightsPerDayOfWeek map into an array of objects with formatted data
+  //   const flightsPerDayOfWeekArray = Array.from(
+  //     flightsPerDayOfWeek,
+  //     ([dayOfWeek, count]) => ({
+  //       dayOfWeek: getDayOfWeek(dayOfWeek),
+  //       count: count
+  //     })
+  //   )
 
-    // Convert the flightsPerWeek map into an array of objects with formatted data
-    const flightsPerWeekArray = Array.from(
-      flightsPerWeek,
-      ([weekNumber, count]) => ({
-        // weeknumber: weekNumber,
-        weekRange: getWeekRange(weekNumber),
-        count: count
-      })
-    )
+  //   // Convert the flightsPerWeek map into an array of objects with formatted data
+  //   const flightsPerWeekArray = Array.from(
+  //     flightsPerWeek,
+  //     ([weekNumber, count]) => ({
+  //       // weeknumber: weekNumber,
+  //       weekRange: getWeekRange(weekNumber),
+  //       count: count
+  //     })
+  //   )
 
-    flightsPerHourArray.sort((a, b) => {
-      const [aStartHour, aStartMinute] = a.hourRange.split(':')[0].split(' ')
-      const [bStartHour, bStartMinute] = b.hourRange.split(':')[0].split(' ')
+  //   flightsPerHourArray.sort((a, b) => {
+  //     const [aStartHour, aStartMinute] = a.hourRange.split(':')[0].split(' ')
+  //     const [bStartHour, bStartMinute] = b.hourRange.split(':')[0].split(' ')
 
-      if (aStartHour === bStartHour) {
-        // If the start hour is the same, compare the start minutes
-        return bStartMinute - aStartMinute
-      } else {
-        // Compare the start hours
-        return bStartHour - aStartHour
-      }
-    })
+  //     if (aStartHour === bStartHour) {
+  //       // If the start hour is the same, compare the start minutes
+  //       return bStartMinute - aStartMinute
+  //     } else {
+  //       // Compare the start hours
+  //       return bStartHour - aStartHour
+  //     }
+  //   })
 
-    // Extract the list of hours
-    const hoursList = Array.from(flightsPerHour.keys())
+  //   // Extract the list of hours
+  //   const hoursList = Array.from(flightsPerHour.keys())
 
-    // Extract the list of hour ranges
-    const hourRangesList = flightsPerHourArray.map(item => item.hourRange)
+  //   // Extract the list of hour ranges
+  //   const hourRangesList = flightsPerHourArray.map(item => item.hourRange)
 
-    // Extract the list of month names
-    const monthNamesList = flightsPerMonthArray.map(item => item.monthName)
+  //   // Extract the list of month names
+  //   const monthNamesList = flightsPerMonthArray.map(item => item.monthName)
 
-    // Extract the list of day of week names
-    const dayOfWeekNamesList = flightsPerDayOfWeekArray.map(
-      item => item.dayOfWeek
-    )
+  //   // Extract the list of day of week names
+  //   const dayOfWeekNamesList = flightsPerDayOfWeekArray.map(
+  //     item => item.dayOfWeek
+  //   )
 
-    // Extract the list of week ranges
-    const weekRangesList = flightsPerWeekArray.map(item => item.weekRange)
+  //   // Extract the list of week ranges
+  //   const weekRangesList = flightsPerWeekArray.map(item => item.weekRange)
 
-    // Extract the count of flights per hour
-    const flightsCountPerHour = flightsPerHourArray.map(item => item.count)
+  //   // Extract the count of flights per hour
+  //   const flightsCountPerHour = flightsPerHourArray.map(item => item.count)
 
-    // Extract the count of flights per month
-    const flightsCountPerMonth = flightsPerMonthArray.map(item => item.count)
+  //   // Extract the count of flights per month
+  //   const flightsCountPerMonth = flightsPerMonthArray.map(item => item.count)
 
-    // Extract the count of flights per day of week
-    const flightsCountPerDayOfWeek = flightsPerDayOfWeekArray.map(
-      item => item.count
-    )
+  //   // Extract the count of flights per day of week
+  //   const flightsCountPerDayOfWeek = flightsPerDayOfWeekArray.map(
+  //     item => item.count
+  //   )
 
-    // Extract the count of flights per week
-    const flightsCountPerWeek = flightsPerWeekArray.map(item => item.count)
+  //   // Extract the count of flights per week
+  //   const flightsCountPerWeek = flightsPerWeekArray.map(item => item.count)
 
-    flightsPerHourArray.sort((a, b) => b.count - a.count)
+  //   flightsPerHourArray.sort((a, b) => b.count - a.count)
 
-    // Sort the flightsPerMonthArray in descending order based on the count
-    flightsPerMonthArray.sort((a, b) => b.count - a.count)
+  //   // Sort the flightsPerMonthArray in descending order based on the count
+  //   flightsPerMonthArray.sort((a, b) => b.count - a.count)
 
-    // Sort the flightsPerDayOfWeekArray in descending order based on the count
-    flightsPerDayOfWeekArray.sort((a, b) => b.count - a.count)
+  //   // Sort the flightsPerDayOfWeekArray in descending order based on the count
+  //   flightsPerDayOfWeekArray.sort((a, b) => b.count - a.count)
 
-    // Sort the flightsPerWeekArray in descending order based on the count
-    flightsPerWeekArray.sort((a, b) => b.count - a.count)
+  //   // Sort the flightsPerWeekArray in descending order based on the count
+  //   flightsPerWeekArray.sort((a, b) => b.count - a.count)
 
-    return [
-      flightsPerHourArray,
-      flightsPerMonthArray,
-      flightsPerDayOfWeekArray,
-      flightsPerWeekArray,
-      hoursList,
-      hourRangesList,
-      monthNamesList,
-      dayOfWeekNamesList,
-      weekRangesList,
-      flightsCountPerHour,
-      flightsCountPerMonth,
-      flightsCountPerDayOfWeek,
-      flightsCountPerWeek
-    ]
-  }
+  //   return [
+  //     flightsPerHourArray,
+  //     flightsPerMonthArray,
+  //     flightsPerDayOfWeekArray,
+  //     flightsPerWeekArray,
+  //     hoursList,
+  //     hourRangesList,
+  //     monthNamesList,
+  //     dayOfWeekNamesList,
+  //     weekRangesList,
+  //     flightsCountPerHour,
+  //     flightsCountPerMonth,
+  //     flightsCountPerDayOfWeek,
+  //     flightsCountPerWeek
+  //   ]
+  // }
 
   // flight yearwise datas
 
@@ -1857,7 +1860,7 @@ const Home = () => {
       DEP_COUNTRY: 'country',
       DEP_CITY: 'city',
       DEP_NAME: 'airport',
-      ENGINE: 'engine',
+      AIRCRAFTS_CLASS: 'engine',
       MODEL: 'model',
       MANUFACTURER: 'manufacturer'
     }
@@ -1939,7 +1942,7 @@ const Home = () => {
       }
     )
 
-    const countryArrayWithName = categoryArrays[0].map(data => {
+    const countryArrayWithName = categoryArrays[0]?.map(data => {
       const countryName = data.category
       const CountryName = countryMapping.find(
         country => country.code === countryName
@@ -1978,7 +1981,7 @@ const Home = () => {
   React.useEffect(() => {
     if (flightsdetails?.length !== 0) {
       const selectedProperties = {
-        ENGINE: jetclass,
+        AIRCRAFTS_CLASS: jetclass,
         MANUFACTURER: manufacture,
         MODEL: model,
         DEP_COUNTRY: countrys
@@ -1987,7 +1990,11 @@ const Home = () => {
       const filteredArray = filterArray(selectedProperties)
       const filtersedArray = filteredArray.filter(item => {
         return (
-          item?.ENGINE !== '0' &&
+          item.DEP_ACTUAL !== '0' &&
+          item.DEP_CITY !== '0' &&
+          item.DEP_NAME !== '0' &&
+          item.DEP_COUNTRY !== '0' &&
+          item?.AIRCRAFTS_CLASS !== '0' &&
           item?.MANUFACTURER !== '0' &&
           item?.MODEL !== '0'
         )
@@ -1995,8 +2002,12 @@ const Home = () => {
 
       var fleetdata = filteredArray?.filter(item => {
         return (
+          item.DEP_ACTUAL !== '0' &&
+          item.DEP_CITY !== '0' &&
+          item.DEP_NAME !== '0' &&
+          item.DEP_COUNTRY !== '0' &&
           item.IS_FLEET == 'Yes' &&
-          item?.ENGINE !== '0' &&
+          item?.AIRCRAFTS_CLASS !== '0' &&
           item?.MANUFACTURER !== '0' &&
           item?.MODEL !== '0'
         )
@@ -2026,12 +2037,14 @@ const Home = () => {
         })
         setFlightDetails(filteredDatesss)
         setFleetData(filteredDatesss)
+        set2020Period(filteredDatesss)
       } else {
         setFlightDetails(filtersedArray)
+        set2020Period(filtersedArray)
         setFleetData(fleetdata)
       }
     }
-  }, [jetclass, manufacture, model, countrys, daterange, flightsdetails])
+  }, [jetclass, manufacture, model, countrys, daterange])
 
   React.useEffect(() => {
     if (flightdetails?.length !== 0) {
@@ -2101,18 +2114,18 @@ const Home = () => {
           item.DEP_CITY !== '0' &&
           item.DEP_NAME !== '0' &&
           item.DEP_COUNTRY !== '0' &&
-          item.ENGINE !== '0' &&
+          item.AIRCRAFTS_CLASS !== '0' &&
           item.MANUFACTURER !== '0' &&
           item.MODEL !== '0'
         )
       })
 
       // setHours(arrCountry)
-      const changes = geteverythingCount(arrCountry)
+      // const changes = geteverythingCount(arrCountry)
 
       const changess = flightAllComparisonData(arrCountry)
       setChange_type(changess)
-      set2020Period(changess)
+      // set2020Period(arrCountry)
       // set2022Period(flightscurrentYear)
     }
   }, [flightdetails])
@@ -2120,8 +2133,8 @@ const Home = () => {
   React.useEffect(() => {
     if (flightdetails?.length !== 0) {
       const filterdata = flightsdetails?.map(item => {
-        const { ENGINE, MANUFACTURER, MODEL, DEP_COUNTRY } = item
-        return { ENGINE, MANUFACTURER, MODEL, DEP_COUNTRY }
+        const { AIRCRAFTS_CLASS, MANUFACTURER, MODEL, DEP_COUNTRY } = item
+        return { AIRCRAFTS_CLASS, MANUFACTURER, MODEL, DEP_COUNTRY }
       })
       const changes = filtervalueExtractingArray(filterdata)
       setFilters(changes)
@@ -2268,7 +2281,7 @@ const Home = () => {
                   id='select_id'
                   onChange={e => setJetclass(e.target.value)}
                 >
-                  <option value=''>Select</option>
+                  {jetclass == '' && <option value=''>Select</option>}
                   {filters?.length !== 0 &&
                     filters?.[0]?.map(item => {
                       return (
@@ -2502,7 +2515,7 @@ const Home = () => {
             <DoughnutChart />
           </div>
           <div className='doughnut_contanier'>
-            <h6 className='dougnut_heading'>Flights By Aircraft Class</h6>
+            <h6 className='dougnut_heading'>Flights By Aircraft Engine</h6>
             <AircraftClass />
           </div>
           <div className='doughnut_contanier'>
