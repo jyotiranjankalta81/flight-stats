@@ -121,11 +121,11 @@ const DomesticandInternational = () => {
       showForZeroSeries: true,
       position: 'bottom',
       horizontalAlign: 'center',
-      fontSize: '15px',
+      fontSize: '10px',
       fontFamily: 'Helvetica, Arial',
       fontWeight: 400,
       itemMargin: {
-        horizontal: 6,
+        horizontal: 3,
         vertical: 0
       }
     },

@@ -2132,14 +2132,14 @@ const Home = () => {
 
   React.useEffect(() => {
     if (flightdetails?.length !== 0) {
-      const filterdata = flightsdetails?.map(item => {
+      const filterdata = flightdetails?.map(item => {
         const { AIRCRAFTS_CLASS, MANUFACTURER, MODEL, DEP_COUNTRY } = item
         return { AIRCRAFTS_CLASS, MANUFACTURER, MODEL, DEP_COUNTRY }
       })
       const changes = filtervalueExtractingArray(filterdata)
       setFilters(changes)
     }
-  }, [flightdetails])
+  }, [flightdetails, jetclass, model, manufacture])
 
   React.useEffect(() => {
     if (flightdetails?.length !== 0) {
@@ -2515,7 +2515,7 @@ const Home = () => {
             <DoughnutChart />
           </div>
           <div className='doughnut_contanier'>
-            <h6 className='dougnut_heading'>Flights By Aircraft Engine</h6>
+            <h6 className='dougnut_heading'>Flights By Aircraft Class</h6>
             <AircraftClass />
           </div>
           <div className='doughnut_contanier'>

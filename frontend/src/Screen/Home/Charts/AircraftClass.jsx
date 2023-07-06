@@ -15,8 +15,8 @@ const AircraftClass = () => {
   function getAircraftClass (aircraftArray) {
     const countMap = {}
     aircraftArray.forEach(obj => {
-      if (obj.ENGINE !== '0') {
-        const engineType = obj.ENGINE
+      if (obj.AIRCRAFTS_CLASS !== '0') {
+        const engineType = obj.AIRCRAFTS_CLASS
         countMap[engineType] = countMap[engineType]
           ? countMap[engineType] + 1
           : 1
@@ -46,8 +46,8 @@ const AircraftClass = () => {
   React.useEffect(() => {
     if (flightsdetails?.length !== 0) {
       const arrEngineTypes = flightsdetails.map(item => {
-        const { ENGINE } = item
-        return { ENGINE }
+        const { AIRCRAFTS_CLASS } = item
+        return { AIRCRAFTS_CLASS }
       })
       // setHours(arrCountry)
 
@@ -91,11 +91,11 @@ const AircraftClass = () => {
       showForZeroSeries: true,
       position: 'bottom',
       horizontalAlign: 'center',
-      fontSize: '15px',
+      fontSize: '10px',
       fontFamily: 'Helvetica, Arial',
       fontWeight: 400,
       itemMargin: {
-        horizontal: 6,
+        horizontal: 3,
         vertical: 0
       }
     },

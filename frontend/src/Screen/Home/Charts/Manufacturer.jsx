@@ -110,19 +110,19 @@ const Manufacturer = () => {
 
     legend: {
       // position: 'right'
-      show: false,
+      show: true,
       showForSingleSeries: false,
       showForNullSeries: true,
       showForZeroSeries: true,
       display: 'none',
       position: 'bottom',
       horizontalAlign: 'center',
-      fontSize: '15px',
+      fontSize: '10px',
       fontFamily: 'Helvetica, Arial',
       fontWeight: 400,
       itemMargin: {
         horizontal: 3,
-        vertical: 0
+        vertical: 1
       }
     },
     responsive: [
@@ -148,10 +148,10 @@ const Manufacturer = () => {
           options={options}
           series={continentshare?.[2]}
           width={380}
-          height={310}
+          height={350}
         />
       )}
-      <br />
+      {/* <br /> */}
       {/* <br /> */}
     </div>
   )
