@@ -60,7 +60,7 @@ app.get("/demo", async (req, res) => {
 async function fetchData() {
   try {
     // Make the GET request to the third-party website
-    return false;
+    // return false;
 
     const response = await axios.get(webLink, {
       params: {
@@ -369,7 +369,7 @@ async function fetchData() {
 
     // return false;
 
-    for (let index = 0; index < 2; index++) {
+    for (let index = 0; index < data?.length; index++) {
       const element = data[index]?.flight_icao;
       // console.log("elements", data[index]);
       if (element) {

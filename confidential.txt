@@ -37,7 +37,7 @@ sudo mysql
 
 step-8:
 Update the password for the MySql Server
-ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Kalta@1a';
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Kalta@123';
 RENAME USER 'root'@'localhost' TO 'root'@'%';
 
 FLUSH PRIVILEGES;
@@ -107,38 +107,5 @@ git clone https://github.com/yeshwanthlm/nodejs-on-ec2.git
 
 
 
-Binaca
-#FAF8ED===>Trust
-ghia
 
 
-Casal
-#2C7269
-green-->Security & Trust
-
-Amarnath
-#ED4463
-red--->Speed,courage & Fear
-
-
-Saffron
-#EEC032
-yellow===>Fun and Cheap
-
-
-
-mesag29173@devswp.com mail
-
-
-
-
-FB.getLoginStatus(function(response) {
-  if (response.status === 'connected') {
-    var accessToken = response.authResponse.accessToken;
-    console.log(accessToken)
-  } 
-} );
-
-
-
-EAABwzLixnjYBADHoIGhFYhAf9DaYYUizEcfp9qZBFt8gq3plfQxRtxH6FZAUFSkStT1ZClguPgKoMEEYTAyVDPgjLYErsybzYHhsyVZAxOBImZBGlu7ZAod5ZAZCHdiJ5C9RHreXz6qX78r288ziKyTgCfEaFZBfKxQZB6wPzqQSQTOYmzO5M7Ssjv

@@ -13,6 +13,7 @@ import ReactPaginate from 'react-paginate'
 // import moment from 'moment.js'
 import moment from 'moment'
 import HeatMap from './Charts/HeatMap'
+import SingleDay from './Charts/SingleDay'
 // import countryContinents from 'country-continents'
 
 // const data = [
@@ -2281,7 +2282,7 @@ const Home = () => {
                   id='select_id'
                   onChange={e => setJetclass(e.target.value)}
                 >
-                  {jetclass == '' && <option value=''>Select</option>}
+                  <option value=''>Select</option>
                   {filters?.length !== 0 &&
                     filters?.[0]?.map(item => {
                       return (
@@ -3076,6 +3077,8 @@ const Home = () => {
             )}
           </div>
         </div>
+
+        <SingleDay />
         <br />
         <br />
         <br />
